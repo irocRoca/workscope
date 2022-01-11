@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background-color: var(--primary-black);
+  color: white;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.listItem > a {
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: all 150ms ease-in;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.listItem > a::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid white;
+  transform: scaleX(0);
+  transition: all 250ms ease-in-out;
+  transform-origin: 0% 50%;
+}
+
+.listItem > a:hover::after {
+  transform: scaleX(1);
+}
