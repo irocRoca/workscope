@@ -13,6 +13,14 @@ export default async function handler(req, res) {
   await dbConnect();
 
   switch (req.method) {
+    case "GET":
+      const { limit, page } = req.query;
+      const post = await Post.find()
+        .limit(limit)
+        .skip(page * limit);
+      res.status(200).json(post);
+      break;
+
     case "POST":
       const form = new formidable.IncomingForm();
       const formData = await new Promise((resolve, reject) => {

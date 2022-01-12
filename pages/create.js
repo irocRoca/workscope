@@ -24,12 +24,13 @@ function Create() {
     data.append("description", state.description);
     data.append("file", state.file);
 
-    const res = await fetch("/api/create", {
+    const res = await fetch("/api/post", {
       method: "POST",
       body: data,
     });
-    const resopnse = await res.json();
-    console.log(resopnse);
+    const response = await res.json();
+    console.log(response);
+    // TODO: Redirect to post created.
   };
 
   const previewImage = (file) => {
@@ -84,7 +85,9 @@ function Create() {
             Choose a file
           </label>
         </div>
-        {preview && <img src={preview} style={{ height: "150px" }} />}
+        {preview && (
+          <img src={preview} style={{ height: "150px" }} alt="image preview" />
+        )}
         <div className={classes.field_container}>
           <label htmlFor="description" className={classes.label}>
             Description
