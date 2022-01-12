@@ -1,0 +1,82 @@
+.container {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.form {
+  margin: auto;
+}
+
+.field_container {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.label {
+  display: block;
+  top: 0;
+  margin-bottom: 4px;
+}
+
+.input {
+  border: 0;
+  outline: 0;
+  transition: all 250ms ease-in;
+  width: 100%;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  padding: 10px 5px 5px 5px;
+  font-size: 1.2rem;
+}
+
+.input:focus:not([type="file"]) {
+  border-bottom: 1px solid #495159;
+}
+
+.input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.input[type="file"] + .label {
+  position: initial;
+  font-size: 1.03rem;
+  background-color: red;
+  display: inline-block;
+  padding: 12px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.input[type="file"]:focus + label {
+  outline: 1px dotted #000;
+}
+
+.textarea {
+  resize: vertical;
+  width: 100%;
+  border: 1px solid rgb(204, 204, 204);
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  font-weight: 600;
+  color: white;
+  background-color: #495159;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #373f47;
+}
