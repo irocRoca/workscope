@@ -56,6 +56,7 @@ function Create() {
             id="title"
             type="text"
             name="title"
+            aria-label="title-input"
             className={classes.input}
             onChange={(e) => dispatch({ [e.target.name]: e.target.value })}
             value={state.title}
@@ -70,6 +71,7 @@ function Create() {
             name="price"
             type="number"
             className={classes.input}
+            value={state.price}
             onChange={(e) => dispatch({ [e.target.name]: e.target.value })}
           />
         </div>
@@ -80,6 +82,7 @@ function Create() {
             className={classes.input}
             name="file"
             accept="image/*"
+            value={state.file}
             onChange={(e) => {
               dispatch({ [e.target.name]: e.target.files[0] });
               previewImage(e.target.files[0]);
@@ -113,12 +116,14 @@ function Create() {
             rows="6"
             className={classes.textarea}
             onChange={(e) => dispatch({ [e.target.name]: e.target.value })}
+            value={state.description}
           ></textarea>
         </div>
         <button
           type="submit"
+          name="submit"
           className={classes.btn}
-          disabled={state.title || state.price == ""}
+          disabled={state.title == "" || state.price == ""}
         >
           Submit
         </button>
