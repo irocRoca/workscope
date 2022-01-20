@@ -45,18 +45,43 @@
 }
 
 .input[type="file"] + .label {
-  position: initial;
   font-size: 1.03rem;
-  background-color: red;
   display: inline-block;
   padding: 12px;
-  color: white;
   font-weight: 700;
-  cursor: pointer;
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border: 3px solid #eee;
+  border-radius: 7px;
+  text-align: center;
+  width: 100%;
 }
 
 .input[type="file"]:focus + label {
   outline: 1px dotted #000;
+}
+
+.icon {
+  color: #5f6982;
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+
+.helper {
+  font-weight: 500;
+}
+
+.helper ~ span {
+  display: inline-block;
+  background: #495159;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .textarea {

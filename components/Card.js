@@ -8,6 +8,7 @@ function Card({ person: { title, price, description, image } }) {
       <p>{price}</p>
       <p>{description}</p>
       <Image src={image} height={150} width={150} alt="image" />
+      <button>Bid</button>
     </div>
   );
 }

@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.6rem 1rem;
-  background-color: var(--primary-black);
-  color: white;
+  background-color: white;
+  color: black;
   height: 70px;
 }
 

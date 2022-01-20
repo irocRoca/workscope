@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Navbar from "./index";
+import Navbar from "../components/Navbar";
 
 describe("NavbarPage", () => {
   it("should render the heading", () => {

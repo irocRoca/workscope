@@ -29,7 +29,7 @@ function Posts() {
 }
 
 // export async function getStaticProps() {
-//   const posts = await Post.find({});
+   const posts = await Post.find({});
 // }
 
 export default Posts;

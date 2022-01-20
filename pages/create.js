@@ -1,5 +1,6 @@
 import { useReducer, useState } from "react";
 import classes from "../styles/Create.module.css";
+import { FaDownload } from "react-icons/fa";
 
 const initialState = {
   title: "",
@@ -34,11 +35,13 @@ function Create() {
   };
 
   const previewImage = (file) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setPreview(reader.result);
-    };
+    if (!!file.type.match("image.*")) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+    }
   };
 
   return (
@@ -76,18 +79,30 @@ function Create() {
             type="file"
             className={classes.input}
             name="file"
+            accept="image/*"
             onChange={(e) => {
               dispatch({ [e.target.name]: e.target.files[0] });
               previewImage(e.target.files[0]);
             }}
           />
           <label htmlFor="file" className={classes.label}>
-            Choose a file
+            {preview && (
+              <img
+                src={preview}
+                style={{ height: "150px" }}
+                alt="image preview"
+              />
+            )}
+            {!preview && (
+              <>
+                <FaDownload className={classes.icon} />
+                <div className={classes.helper}>Select a file</div>
+                <span>Upload</span>
+              </>
+            )}
           </label>
         </div>
-        {preview && (
-          <img src={preview} style={{ height: "150px" }} alt="image preview" />
-        )}
+
         <div className={classes.field_container}>
           <label htmlFor="description" className={classes.label}>
             Description
@@ -100,7 +115,11 @@ function Create() {
             onChange={(e) => dispatch({ [e.target.name]: e.target.value })}
           ></textarea>
         </div>
-        <button type="submit" className={classes.btn}>
+        <button
+          type="submit"
+          className={classes.btn}
+          disabled={state.title || state.price == ""}
+        >
           Submit
         </button>
       </form>
