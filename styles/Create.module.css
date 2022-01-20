@@ -1,0 +1,112 @@
+.container {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.form {
+  margin: auto;
+}
+
+.field_container {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.label {
+  display: block;
+  top: 0;
+  margin-bottom: 4px;
+}
+
+.input {
+  border: 0;
+  outline: 0;
+  transition: all 250ms ease-in;
+  width: 100%;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  padding: 10px 5px 5px 5px;
+  font-size: 1.2rem;
+}
+
+.input:focus:not([type="file"]) {
+  border-bottom: 1px solid #495159;
+}
+
+.input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.input[type="file"] + .label {
+  font-size: 1.03rem;
+  display: inline-block;
+  padding: 12px;
+  font-weight: 700;
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border: 3px solid #eee;
+  border-radius: 7px;
+  text-align: center;
+  width: 100%;
+}
+
+.input[type="file"]:focus + label {
+  outline: 1px dotted #000;
+}
+
+.icon {
+  color: #5f6982;
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+
+.helper {
+  font-weight: 500;
+}
+
+.helper ~ span {
+  display: inline-block;
+  background: #495159;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.textarea {
+  resize: vertical;
+  width: 100%;
+  border: 1px solid rgb(204, 204, 204);
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  font-weight: 600;
+  color: white;
+  background-color: #495159;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #373f47;
+}
+
+.btn:disabled {
+  background: #9d9d9d;
+  cursor: not-allowed;
+}

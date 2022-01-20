@@ -3,9 +3,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.6rem 1rem;
-  background-color: var(--primary-black);
-  color: white;
+  background-color: white;
+  color: black;
   height: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -15,8 +17,8 @@
 
 .list {
   list-style: none;
-  display: flex;
   align-items: center;
+  display: none;
 }
 
 .listItem > a {
@@ -41,4 +43,11 @@
 
 .listItem > a:hover::after {
   transform: scaleX(1);
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+  .list {
+    display: flex;
+  }
 }

@@ -15,6 +15,9 @@ export default function Navbar() {
         <li className={classes.listItem}>
           <Link href="/profile">Profile</Link>
         </li>
+        <li className={classes.listItem}>
+          <Link href="/create">Create</Link>
+        </li>
       </ul>
     </nav>
   );
